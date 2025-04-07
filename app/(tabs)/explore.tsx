@@ -1,4 +1,4 @@
-import ArticleCard from "@/components/articleCard";
+import ArticleCard from "@/components/articleCardMed";
 import Articles from "@/components/articlesSection";
 import ArticleRow from "@/components/articlesSection";
 import SectionTitle from "@/components/sectionTitle";
@@ -26,10 +26,10 @@ export default function Explore() {
       />
       <SectionTitle title="Popular Now" />
       <TopicRow
-        title="Popular Now"
         topics={['History', 'Art', 'Anime', 'Software']}
       />
 
+      <SectionTitle title="Today's Featured Articles" />
       <Articles />
       
     </ScrollView>

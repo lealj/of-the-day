@@ -6,7 +6,7 @@ export default function EmptyState() {
     <View style={styles.container}>
       <FontAwesome name="rss" size={48} color="#ccc" />
       <Text style={styles.title}>No Articles Yet</Text>
-      <Text style={styles.subtitle}>Subscribe to some feeds to get started</Text>
+      <Text style={styles.subtitle}>Visit the explore page to get started!</Text>
     </View>
   );
 }

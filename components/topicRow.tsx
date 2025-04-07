@@ -2,7 +2,6 @@ import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import TopicCard from './topicCard'; // we'll define this next
 
 type TopicRowProps = {
-  title: string;
   topics: string[];
 };
 
