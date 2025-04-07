@@ -16,7 +16,7 @@ export default function Explore() {
           borderWidth: 1,
           borderRadius: 8,
           paddingHorizontal: 12,
-          marginTop: 10,
+          marginTop: 6,
         }}
       />
 

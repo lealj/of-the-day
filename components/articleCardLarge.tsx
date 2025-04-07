@@ -19,13 +19,13 @@ export default function ArticleCardLarge({title}: ArticleCardLargeProps) {
 
 const styles = StyleSheet.create({
   card: {
-    width: '100%',
+    width: '96%',
     height: 200,
     backgroundColor: '#D3D3D3',
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 4
+    marginTop: 6
   },
   tag: {
     position: 'absolute',
