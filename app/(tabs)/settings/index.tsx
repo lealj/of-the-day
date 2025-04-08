@@ -1,16 +1,18 @@
 import { Text, View, Switch, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { useState } from "react";
+import { useRouter } from "expo-router";
 
 export default function Settings() {
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
   const [darkModeEnabled, setDarkModeEnabled] = useState(false);
+  const router = useRouter();
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.section}>
         <Text style={styles.sectionHeader}>Subscriptions</Text>
 
-        <TouchableOpacity style={styles.row}>
+        <TouchableOpacity style={styles.row} onPress={() => router.push('/(tabs)/settings/manageSubs')}>
           <Text style={styles.rowText}>Manage Subscriptions</Text>
         </TouchableOpacity>
       </View>
