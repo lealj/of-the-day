@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet } from 'react-native';
-import EmptyState from '@/components/emptyState';
 import ArticleCardLarge from '@/components/articleCardLarge';
 
 export default function Home() {

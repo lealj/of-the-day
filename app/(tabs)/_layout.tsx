@@ -1,44 +1,53 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome } from '@expo/vector-icons';
-import Home from './home';
-import Explore from './explore';
-import Settings from './settings';
-
-const Tab = createBottomTabNavigator();
+import { Tabs } from 'expo-router';
+import type { BottomTabBarIconProps } from '@react-navigation/bottom-tabs';
+import { lightTheme, darkTheme } from '@/constants/colors';
+import { useColorScheme } from 'react-native';
 
 export default function TabsLayout() {
+  const colorScheme = useColorScheme();
+  const theme = colorScheme === 'dark' ? darkTheme : lightTheme
   return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="Your Articles of the Day"
-        component={Home}
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: theme.tabIconSelected,
+        tabBarInactiveTintColor: theme.tabIconDefault,
+        tabBarStyle: {
+          backgroundColor: theme.background,
+          borderTopColor: '#ddd',
+        },
+      }}
+    >
+      <Tabs.Screen
+        name="index"
         options={{
-          tabBarLabel: "Reading List",
-          tabBarIcon: ({ color, size }) => (
+          title: 'Your Articles of The Day',
+          tabBarLabel: 'Reading List',
+          tabBarIcon: ({ color, size }: BottomTabBarIconProps) => (
             <FontAwesome name="book" color={color} size={size} />
           ),
         }}
       />
-      <Tab.Screen
-        name="Explore"
-        component={Explore}
+      <Tabs.Screen
+        name="explore"
         options={{
+          title: 'Explore',
           tabBarLabel: 'Explore',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size }: BottomTabBarIconProps) => (
             <FontAwesome name="search" color={color} size={size} />
           ),
         }}
       />
-      <Tab.Screen
-        name="Settings"
-        component={Settings}
+      <Tabs.Screen
+        name="settings"
         options={{
+          title: 'Settings',
           tabBarLabel: 'Settings',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size }: BottomTabBarIconProps) => (
             <FontAwesome name="cog" color={color} size={size} />
           ),
         }}
       />
-    </Tab.Navigator>
+    </Tabs>
   );
 }

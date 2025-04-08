@@ -1,6 +1,4 @@
-import ArticleCard from "@/components/articleCardMed";
 import Articles from "@/components/articlesSection";
-import ArticleRow from "@/components/articlesSection";
 import SectionTitle from "@/components/sectionTitle";
 import TopicRow from "@/components/topicRow";
 import { FlatList, ScrollView, Text, TextInput, View} from "react-native";
