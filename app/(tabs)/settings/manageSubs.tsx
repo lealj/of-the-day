@@ -6,7 +6,7 @@ export const unstable_settings = {
   href: null,
 };
 
-const subscribedTopics = ['Art', 'History', 'Biology', 'Philosophy', 'Astronomy'];
+const subscribedTopics = ['Art', 'History'];
 
 export default function ManageSubs() {
 	const handleRemove = (topic: string) => {
@@ -39,7 +39,6 @@ export default function ManageSubs() {
 const styles = StyleSheet.create({
 	container: {
 		padding: 16,
-		backgroundColor: '#f9f9f9',
 	},
 	heading: {
 		fontSize: 20,
