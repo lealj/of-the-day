@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert, StatusBar } from 'react-native';
 import { Stack } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
@@ -14,25 +14,22 @@ export default function ManageSubs() {
 	};
 
 	return (
-		<>
-			<Stack.Screen options={{ title: 'Manage Subscriptions' }} />
-			<ScrollView contentContainerStyle={styles.container}>
-				<Text style={styles.heading}>Your Subscribed Topics</Text>
-				<View style={styles.topicList}>
-					{subscribedTopics.map((topic) => (
-						<View key={topic} style={styles.topicCard}>
-							<Text style={styles.topicText}>{topic}</Text>
-							<TouchableOpacity
-								style={styles.removeBtn}
-								onPress={() => handleRemove(topic)}
-							>
-								<FontAwesome name='trash-o' size={24} color='black' />
-							</TouchableOpacity>
-						</View>
-					))}
-				</View>
-			</ScrollView>
-		</>
+		<ScrollView contentContainerStyle={styles.container}>
+			<Text style={styles.heading}>Your Subscribed Topics</Text>
+			<View style={styles.topicList}>
+				{subscribedTopics.map((topic) => (
+					<View key={topic} style={styles.topicCard}>
+						<Text style={styles.topicText}>{topic}</Text>
+						<TouchableOpacity
+							style={styles.removeBtn}
+							onPress={() => handleRemove(topic)}
+						>
+							<FontAwesome name='trash-o' size={24} color='black' />
+						</TouchableOpacity>
+					</View>
+				))}
+			</View>
+		</ScrollView>
 	);
 }
 
