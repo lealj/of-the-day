@@ -3,8 +3,8 @@ const lightGrey = '#ddd';
 const charcoal = '#121212';
 
 export const lightTheme = {
-	primary: softWhite,
-	background: '#fff',
+	primary: lightGrey,
+	background: '#FFFAFA',
 	tabIconDefault: '#888',
 	tabIconSelected: charcoal,
 	text: '#000000'

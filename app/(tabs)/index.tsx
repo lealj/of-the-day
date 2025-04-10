@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import ArticleCardLarge from '@/components/articleCardLarge';
 
 export default function Home() {
   return (
-    <View style={{ flex: 1, alignItems: 'center' }}>
+    <ScrollView contentContainerStyle={styles.container}>
       <ArticleCardLarge
         title="The Battle of Vercalle"
         topic="History"
@@ -13,6 +13,14 @@ export default function Home() {
         topic="Art"
       />
       <Text style={{marginTop: 16}}>Visit the Explore Tab to Add New Subscriptions</Text>
-    </View>
+    </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF'
+  }
+});
