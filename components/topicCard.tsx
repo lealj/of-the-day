@@ -1,6 +1,6 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { useState } from 'react';
-import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 
 type TopicCardProps = {
   title: string;

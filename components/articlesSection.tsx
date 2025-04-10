@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import ArticleCard from './articleCardMed';
 
 const articles = [

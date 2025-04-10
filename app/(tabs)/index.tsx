@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { Text, StyleSheet, ScrollView } from 'react-native';
 import ArticleCardLarge from '@/components/articleCardLarge';
 
 export default function Home() {

@@ -1,7 +1,7 @@
 import Articles from "@/components/articlesSection";
 import SectionTitle from "@/components/sectionTitle";
 import TopicRow from "@/components/topicRow";
-import { FlatList, ScrollView, Text, TextInput, View} from "react-native";
+import { ScrollView, TextInput} from "react-native";
 
 export default function Explore() {
   return (

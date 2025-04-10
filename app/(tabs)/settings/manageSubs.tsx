@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert, StatusBar } from 'react-native';
-import { Stack } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export const unstable_settings = {
