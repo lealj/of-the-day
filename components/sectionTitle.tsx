@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: '600',
-    marginVertical: 10,
+    marginVertical: 6,
     marginHorizontal: 10
   }
 });

@@ -1,19 +1,28 @@
-import { Text, TouchableOpacity, StyleSheet, View } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet, View, ImageBackground } from 'react-native';
+import { SAMPLE_IMAGES } from '@/constants/imageMap';
 
 type ArticleCardMedProps = {
   title: string;
-  tag: string;
+  topic: string;
 };
 
-export default function ArticleCardMed({ title, tag }: ArticleCardMedProps) {
+export default function ArticleCardMed({ title, topic }: ArticleCardMedProps) {
+  let topicUpper = topic.charAt(0).toUpperCase() + topic.slice(1);
+  let imgSrc = SAMPLE_IMAGES[topic]?.uri;
+
   return (
     <TouchableOpacity style={styles.card}>
-      <View style={styles.tag}>
-        <Text style={styles.tagText}>{tag}</Text>
-      </View>
-      <Text style={{ color: '#333', fontWeight: 'bold' }}>
-        {title}
-      </Text>
+      <ImageBackground
+        style={styles.image}
+        source={imgSrc}
+      >
+        <View style={styles.tag}>
+          <Text style={styles.tagText}>{topicUpper}</Text>
+        </View>
+        <Text style={styles.title}>
+          {title}
+        </Text>
+      </ImageBackground>
     </TouchableOpacity>
   );
 }
@@ -21,21 +30,24 @@ export default function ArticleCardMed({ title, tag }: ArticleCardMedProps) {
 const styles = StyleSheet.create({
   card: {
     width: '100%',
-    height: 200,
+    height: 180,
     backgroundColor: '#D3D3D3',
+    overflow: 'hidden',
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
   },
   image: {
     width: '100%',
-    height: 90,
-    borderRadius: 8
+    flex: 1,
+    justifyContent: 'flex-end',
   },
   title: {
     fontWeight: '600',
     fontSize: 14,
-    color: '#333',
+    color: '#FFFFFF',
+    marginHorizontal: 8,
+    marginVertical: 4,
   },
   tag: {
     position: 'absolute',

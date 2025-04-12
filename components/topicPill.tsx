@@ -1,25 +1,17 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { useState } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-type TopicCardProps = {
+type TopicPillProps = {
   title: string;
 };
 
-export default function TopicCard({ title }: TopicCardProps) {
+export default function TopicPill({ title }: TopicPillProps) {
   const [selected, setSelected] = useState(false);
   return (
     <TouchableOpacity
       onPress={() => setSelected(!selected)}
-      style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingVertical: 10,
-        paddingHorizontal: 16,
-        borderRadius: 20,
-        backgroundColor: selected ? '#0000FF' : '#D3D3D3',
-        marginRight: 10
-      }}
+      style={[styles.container, { backgroundColor: selected ? '#121212' : '#eee' }]}
     >
       <Text style={{ color: selected ? 'white' : '#333', fontWeight: 'bold' }}>
         {title}
@@ -35,3 +27,17 @@ export default function TopicCard({ title }: TopicCardProps) {
     </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 20,
+    marginRight: 10,
+    elevation: 0,
+    borderWidth: 0.5,
+    borderColor: '#ccc'
+  }
+});

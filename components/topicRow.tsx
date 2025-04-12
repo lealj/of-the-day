@@ -1,5 +1,5 @@
 import { View, ScrollView, StyleSheet } from 'react-native';
-import TopicCard from './topicCard'; // we'll define this next
+import TopicPill from './topicPill'; // we'll define this next
 
 type TopicRowProps = {
   topics: string[];
@@ -10,7 +10,7 @@ export default function TopicRow({ topics }: TopicRowProps) {
     <View style={styles.container}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {topics.map((topic, index) => (
-          <TopicCard key={index} title={topic} />
+          <TopicPill key={index} title={topic} />
         ))}
       </ScrollView>
     </View>
@@ -20,7 +20,7 @@ export default function TopicRow({ topics }: TopicRowProps) {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 16,
-    marginLeft: 4
+    marginLeft: 7
   },
   title: {
     fontSize: 18,

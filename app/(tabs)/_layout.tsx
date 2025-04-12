@@ -25,7 +25,6 @@ export default function TabsLayout() {
           tabBarStyle: {
             backgroundColor: '#fffafa',
             borderTopColor: '#ddd',
-            position: 'absolute',
             elevation: 0
           },
         }}
