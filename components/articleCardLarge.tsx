@@ -1,22 +1,22 @@
 import { TouchableOpacity, Text, StyleSheet, View, ImageBackground } from "react-native";
 import { SAMPLE_IMAGES } from "@/constants/imageMap";
+import { useRouter } from "expo-router";
 
 type ArticleCardLargeProps = {
   title: string;
   topic: string;
+  id: string;
 };
 
-export default function ArticleCardLarge({title, topic}: ArticleCardLargeProps) {
+export default function ArticleCardLarge({title, topic, id}: ArticleCardLargeProps) {
+  const router = useRouter();
 
-  let imgSrc = null;
-  if (topic === 'Art') {
-    imgSrc = SAMPLE_IMAGES.art.uri;
-  } else if (topic === 'History') {
-    imgSrc = SAMPLE_IMAGES.history.uri;
-  }
-
+  const imgSrc = SAMPLE_IMAGES[topic.toLowerCase()]?.uri;
+ 
   return (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={() =>
+      router.push({ pathname: "/home/[id]", params: { id, topic, title },
+    })}>
       <ImageBackground
         style={styles.image}
         source={imgSrc}

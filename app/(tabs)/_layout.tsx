@@ -30,9 +30,9 @@ export default function TabsLayout() {
         }}
       >
         <Tabs.Screen
-          name="index"
+          name="home"
           options={{
-            title: 'Your Articles of The Day',
+            headerShown: false,
             tabBarLabel: 'Reading List',
             tabBarIcon: ({ color, size }: BottomTabBarIconProps) => (
               <FontAwesome name="book" color={color} size={size} />
@@ -57,6 +57,18 @@ export default function TabsLayout() {
             tabBarIcon: ({ color, size }: BottomTabBarIconProps) => (
               <FontAwesome name="cog" color={color} size={size} />
             ),
+          }}
+        />
+        <Tabs.Screen
+          name="index"
+          options={{
+            href: null
+          }}
+        />
+        <Tabs.Screen
+          name="article/[id]"
+          options={{
+            href: null
           }}
         />
       </Tabs>

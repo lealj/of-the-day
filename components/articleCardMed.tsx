@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     width: '100%',
     flex: 1,
     justifyContent: 'flex-end',
+    transform: [{ scale: 1.05 }]
   },
   title: {
     fontWeight: '600',

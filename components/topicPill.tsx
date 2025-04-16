@@ -8,6 +8,7 @@ type TopicPillProps = {
 
 export default function TopicPill({ title }: TopicPillProps) {
   const [selected, setSelected] = useState(false);
+  
   return (
     <TouchableOpacity
       onPress={() => setSelected(!selected)}
