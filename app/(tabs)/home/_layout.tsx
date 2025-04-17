@@ -23,12 +23,6 @@ export default function HomeLayout() {
 			/>
 			<Stack.Screen
 				name="[id]"
-				options={{
-					title: "Your Articles Of The Day",
-					headerStyle: {
-						backgroundColor: '#fffafa'
-					}
-				}}
 			/>
 		</Stack>
 		</>

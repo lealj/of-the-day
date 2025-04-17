@@ -1,9 +1,11 @@
 import { ARTICLE_MAP } from "@/constants/articleMap";
 import { SAMPLE_IMAGES } from "@/constants/imageMap";
-import { useLocalSearchParams} from "expo-router";
-import { useState } from "react";
-import { Text, Image, StyleSheet, ScrollView, TouchableOpacity} from "react-native";
-import ImageModal from "@/components/imageModal";
+import { Stack, useLocalSearchParams, useNavigation } from "expo-router";
+import { useLayoutEffect, useState } from "react";
+import { Text, Image, StyleSheet, ScrollView, TouchableOpacity, Modal, View, Pressable} from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { FontAwesome } from "@expo/vector-icons";
+
 
 export default function Article() {
 	const [imageFullscreen, setImageFullscreen] = useState(false);
@@ -11,6 +13,13 @@ export default function Article() {
 	const imgSrc = SAMPLE_IMAGES[(topic as string).toLowerCase()]?.uri;
 	const content = ARTICLE_MAP[(topic as string).toLowerCase()]?.content;
 	const paragraphs = content.split('\n\n');
+
+	const navigation = useNavigation();
+	useLayoutEffect(() => {
+		if (title) {
+			navigation.setOptions({ title: String(title) });
+		}
+	}, [title]);
 
 	return (
 		<>
@@ -26,11 +35,28 @@ export default function Article() {
 				))}
 			</ScrollView>
 
-			<ImageModal
-        visible={imageFullscreen}
-        onClose={() => setImageFullscreen(false)}
-        imgSrc={imgSrc}
-      />
+			<Modal
+				visible={imageFullscreen}
+				transparent
+				animationType="fade"
+				statusBarTranslucent
+			>
+				{imageFullscreen && (
+					<>
+						<StatusBar style="light" translucent backgroundColor="transparent" />
+						<View style={s.modalOverlay}>
+							<Pressable onPress={() => setImageFullscreen(false)} style={s.fullscreenContainer}>
+								<FontAwesome name="times" size={24} color="black" style={s.xButton} />
+								<Image
+									source={imgSrc}
+									style={s.fullscreenImage}
+									resizeMode="contain"
+								/>
+							</Pressable>
+						</View>
+					</>
+				)}
+			</Modal>
 		</>
 	)
 }
@@ -60,6 +86,16 @@ const s = StyleSheet.create({
 		backgroundColor: '#000',
 		justifyContent: 'center',
 		alignItems: 'center',
+	},
+	fullscreenContainer: {
+		width: '100%',
+		height: '100%',
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	fullscreenImage: {
+		width: '100%',
+		height: '100%',
 	},
 	xButton: {
 		position: 'absolute',
