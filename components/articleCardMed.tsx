@@ -14,7 +14,7 @@ export default function ArticleCardMed({ title, topic }: ArticleCardMedProps) {
   const id = ARTICLE_MAP[topic]?.id;
 
   return (
-    <TouchableOpacity style={styles.card} onPress={() => router.push({ pathname: "/home/[id]", params: { id, topic, title }})}>
+    <TouchableOpacity style={styles.card} onPress={() => router.push({ pathname: "/explore/[id]", params: { id, topic, title }})}>
       <ImageBackground
         style={styles.image}
         source={imgSrc}
