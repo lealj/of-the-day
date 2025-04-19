@@ -9,12 +9,12 @@ export default function Home() {
 				<ScrollView contentContainerStyle={styles.container}>
 					<ArticleCardLarge
 						title="The Battle of Vercalle"
-						topic="History"
+						topic="history"
 						id="1"
 					/>
 					<ArticleCardLarge
 						title="Joshua Commanding the Sun..."
-						topic="Art"
+						topic="art"
 						id="2"
 					/>
 					<Text style={{ marginTop: 16 }}>

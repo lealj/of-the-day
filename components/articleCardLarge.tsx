@@ -11,7 +11,8 @@ type ArticleCardLargeProps = {
 export default function ArticleCardLarge({title, topic, id}: ArticleCardLargeProps) {
   const router = useRouter();
 
-  const imgSrc = SAMPLE_IMAGES[topic.toLowerCase()]?.uri;
+  const imgSrc = SAMPLE_IMAGES[topic]?.uri;
+  const tag = topic.charAt(0).toUpperCase() + topic.slice(1);
  
   return (
     <TouchableOpacity style={styles.card} onPress={() =>
@@ -22,7 +23,7 @@ export default function ArticleCardLarge({title, topic, id}: ArticleCardLargePro
         source={imgSrc}
       >
         <View style={styles.tag}>
-          <Text style={styles.tagText}>{topic}</Text>
+          <Text style={styles.tagText}>{tag}</Text>
         </View>
         <Text style={{ color: 'white', fontWeight: 'bold', marginLeft: 6, marginBottom: 2 }}>
           {title}

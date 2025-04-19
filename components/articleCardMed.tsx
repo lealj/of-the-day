@@ -1,5 +1,7 @@
 import { Text, TouchableOpacity, StyleSheet, View, ImageBackground } from 'react-native';
 import { SAMPLE_IMAGES } from '@/constants/imageMap';
+import { router } from 'expo-router';
+import { ARTICLE_MAP } from '@/constants/articleMap';
 
 type ArticleCardMedProps = {
   title: string;
@@ -9,9 +11,10 @@ type ArticleCardMedProps = {
 export default function ArticleCardMed({ title, topic }: ArticleCardMedProps) {
   let topicUpper = topic.charAt(0).toUpperCase() + topic.slice(1);
   let imgSrc = SAMPLE_IMAGES[topic]?.uri;
+  const id = ARTICLE_MAP[topic]?.id;
 
   return (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={() => router.push({ pathname: "/home/[id]", params: { id, topic, title }})}>
       <ImageBackground
         style={styles.image}
         source={imgSrc}

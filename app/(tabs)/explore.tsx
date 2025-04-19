@@ -3,9 +3,10 @@ import SectionTitle from "@/components/sectionTitle";
 import TopicRow from "@/components/topicRow";
 import { FontAwesome } from "@expo/vector-icons";
 import { ScrollView, TextInput, StyleSheet, View} from "react-native";
+import { ARTICLE_MAP } from "@/constants/articleMap";
 
 export default function Explore() {
-  const topics = ['History', 'Art', 'Anime', 'Software', 'Paleontology', 'Music'];
+  const topics = Object.keys(ARTICLE_MAP);
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.searchWrapper}>
