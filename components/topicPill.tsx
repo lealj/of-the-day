@@ -8,7 +8,7 @@ type TopicPillProps = {
 
 export default function TopicPill({ title }: TopicPillProps) {
   const [selected, setSelected] = useState(false);
-  
+  title = title.charAt(0).toUpperCase() + title.slice(1);
   return (
     <TouchableOpacity
       onPress={() => setSelected(!selected)}

@@ -5,7 +5,7 @@ export const unstable_settings = {
 	href: null,
 };
 
-export default function HomeLayout() {
+export default function SettingsLayout() {
 	return (
 		<>
 		<StatusBar
@@ -15,7 +15,7 @@ export default function HomeLayout() {
 			<Stack.Screen
 				name="index"
 				options={{
-					title: "Your Articles Of The Day",
+					title: "Explore",
 					headerStyle: {
 						backgroundColor: '#fffafa'
 					}
@@ -23,6 +23,9 @@ export default function HomeLayout() {
 			/>
 			<Stack.Screen
 				name="[id]"
+				options={{
+					href: null
+				}}
 			/>
 		</Stack>
 		</>

@@ -42,7 +42,7 @@ export default function TabsLayout() {
         <Tabs.Screen
           name="explore"
           options={{
-            title: 'Explore',
+            headerShown: false,
             tabBarLabel: 'Explore',
             tabBarIcon: ({ color, size }: BottomTabBarIconProps) => (
               <FontAwesome name="search" color={color} size={size} />

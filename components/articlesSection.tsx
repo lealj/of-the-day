@@ -1,5 +1,5 @@
 import { View, StyleSheet } from 'react-native';
-import ArticleCard from './articleCardMed';
+import ArticleCardMed from './articleCardMed';
 
 const articles = [
   { id: '1', title: "Joshua Commanding the...", tag: "art" },
@@ -16,7 +16,7 @@ export default function ArticlesSection() {
       <View style={styles.grid}>
         {articles.map((article, index) => (
           <View key={article.id} style={styles.cardWrapper}>
-            <ArticleCard title={article.title} topic={article.tag} />
+            <ArticleCardMed title={article.title} topic={article.tag} />
           </View>
         ))}
       </View>
